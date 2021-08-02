@@ -1,5 +1,9 @@
 ## Instructions
 
+You can check this app here: https://floating-refuge-81442.herokuapp.com/
+
+OR
+
 If you you already have an instance of MySQL Workbench on your machine and you would like to download the code and try it:
 
 1. Clone the repo: `git clone https://github.com/ViktorKharts/auth-test-task.git`
