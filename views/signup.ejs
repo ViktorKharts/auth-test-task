@@ -1,0 +1,59 @@
+<div class="col-sm-6 col-sm-offset-3">
+
+	<h1><span class="fa fa-sign-in"></span> Signup</h1>
+
+	<% if (typeof message !== 'undefined') { %>
+		<div class="alert alert-danger"><%= message %></div>
+	<% } %>
+
+	<form action="/signup" method="post">
+		<div class="form-group">
+			<label>Full Name</label>
+			<input type="text" class="form-control" name="name"
+			value="<%= typeof name != 'undefined' ? name : '' %>" required>
+		</div>
+		<div class="form-group">
+			<label>Email</label>
+			<input type="email" class="form-control" name="email"
+			value="<%= typeof email != 'undefined' ? email : '' %>" required>
+		</div>
+		<div class="form-group">
+			<label>Date of Birth</label>
+			<input type="date" class="form-control" name="dateofbirth"
+			value="<%= typeof dateofbirth != 'undefined' ? dateofbirth : '' %>" required>
+		</div>
+		<div class="form-group">
+			<label>Country of Origin</label>
+			<select class="form-control" name="country">
+				<% countriesList.forEach(country => { %>
+						<option value="<%= country.countryname %>"><%= country.countryname %></option>
+				<% }); %>
+			</select>
+		</div>
+		<div class="form-group">
+			<label>Username</label>
+			<input type="text" class="form-control" name="username"
+			value="<%= typeof username != 'undefined' ? username : '' %>" required>
+		</div>
+		<div class="form-group">
+			<label>Password</label>
+			<input type="password" class="form-control" name="password"
+			value="<%= typeof password != 'undefined' ? password : '' %>" required>
+		</div>
+		<div class="form-group">
+			<label>Confirm Password</label>
+			<input type="password" class="form-control" name="password2"
+			value="<%= typeof password2 != 'undefined' ? password2 : '' %>" required>
+		</div>
+		<div class="form-group">
+			<h4><input type="checkbox" required> I agree to all the terms and conditions.</h4>
+		</div>
+		
+		<button type="submit" class="btn btn-warning btn-lg">Signup</button>
+	</form>
+
+	<hr>
+
+	<p>Already have an account? <a href="/login">Login</a></p>
+	<p>Or go <a href="/">home</a>.</p>
+</div>
